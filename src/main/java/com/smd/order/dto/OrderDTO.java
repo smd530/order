@@ -1,17 +1,15 @@
-package com.smd.order.bean;
+package com.smd.order.dto;
 
+import com.smd.order.bean.OrderDetail;
 import lombok.Data;
+import org.hibernate.criterion.Order;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.math.BigDecimal;
-import java.util.Date;
+import java.util.List;
 
 @Data
-@Entity
-public class OrderMaster {
+public class OrderDTO {
 
-    @Id
     private String orderId;
 
     /**
@@ -49,8 +47,5 @@ public class OrderMaster {
      */
     private Integer payStatus;
 
-    private Date createTime;
-
-    private Date updateTime;
-
+    private List<OrderDetail> orderDetailList;
 }
